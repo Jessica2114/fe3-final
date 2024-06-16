@@ -1,20 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+const Card = ({ name, username, id, addToFavorites }) => {
 
-const Card = ({ name, username, id }) => {
+  const addFav = () => {
+    // Lógica para agregar la Card en el localStorage como favorita
+    addToFavorites({ id, name, username });
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
-  }
+    // Mostrar mensaje de éxito del navegador
+    alert(`¡${name} ha sido añadido a favoritos con éxito!`);
+  };
 
   return (
     <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
-
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+      <img src="/images/doctor.jpg" alt="Doctor" className="dentist-image" />
+      <Link to={`/dentist/${id}`} className="detail-link">
+        <h3>{name}</h3>
+      </Link>
+      <p>{username}</p>
+      <button onClick={addFav} className="favButton">
+      <img src="/favicon.png" alt="Add to favorites" className="favIcon" />
+      </button>
     </div>
   );
 };
