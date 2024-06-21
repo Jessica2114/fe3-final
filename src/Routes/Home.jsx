@@ -12,8 +12,6 @@ const Home = () => {
   }, []);
 
   const addToFavorites = (dentist) => {
-    // Implementación básica para agregar al localStorage como favorito
-    // Aquí podrías personalizar según tus necesidades
     console.log('Adding to favorites:', dentist);
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(dentist);

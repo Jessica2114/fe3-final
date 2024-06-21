@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 const Card = ({ name, username, id, addToFavorites }) => {
 
   const addFav = () => {
-    // Lógica para agregar la Card en el localStorage como favorita
     addToFavorites({ id, name, username });
-
-    // Mostrar mensaje de éxito del navegador
+    
     alert(`¡${name} ha sido añadido a favoritos con éxito!`);
   };
 
